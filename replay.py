@@ -84,8 +84,10 @@ try:
   base_gyro_x=0.2637
   base_gyro_y=0.229
   base_gyro_z=0.08
-
-  squeezeBy=1
+  
+  # Squeeze range of deviation couple times to zoom in differences
+  # from experimental reason
+  squeezeBy=10
   # Temperature positive and degative deviation tolerance range
   t1_pos_dev=5/squeezeBy
   t1_neg_dev=-10/squeezeBy
@@ -251,7 +253,7 @@ def get_sense_data():
 
 
 try:
-  data_file = dir_path + "/wm.csv"
+  data_file = dir_path + "/wm_squeeze.csv"
   create_csv_file(data_file)
   counter = 1
 
